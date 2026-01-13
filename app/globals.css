@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-	--background: #fcf5d9;
-	--foreground: #2b2b2b;
+	/* --background: #fcf5d9;
+	--foreground: #2b2b2b; */
 	--light-yellow: #fcf5d9;
 	--ochre: #feae02;
 	--orange: #f17648;
@@ -11,11 +11,63 @@
 }
 
 @theme inline {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
+	/* --color-background: var(--background);
+	--color-foreground: var(--foreground); */
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
 	--font-vt323: var(--font-vt323);
+	--flicker-gradient:
+		linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+		linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+
+	--breakpoint-smx: 580px;
+
+	--animate-pointer-cycle: pointer-cycle 1.5s ease-in-out infinite alternate;
+
+	@keyframes pointer-cycle {
+		from {
+			transform: rotate(0deg) scale(1);
+		}
+		to {
+			transform: rotate(2deg) scale(1.02);
+		}
+	}
+}
+
+@layer utilities {
+	.clip-monitor {
+		clip-path: polygon(
+			8px 5px,
+			10% 4px,
+			20% 3px,
+			30% 2px,
+			40% 1.5px,
+			50% 1px,
+			60% 1.2px,
+			65% 1.4px,
+			70% 1.7px,
+			80% 2.4px,
+			90% 3.6px,
+			calc(100% - 6px) 5px,
+			calc(100% - 3px) 25%,
+			calc(100% - 1.5px) 50%,
+			100% 75%,
+			100% calc(100% - 4px),
+			90% calc(100% - 3.2px),
+			80% calc(100% - 2.4px),
+			70% calc(100% - 1.7px),
+			60% calc(100% - 1.4px),
+			50% calc(100% - 1px),
+			40% calc(100% - 1.5px),
+			30% calc(100% - 2px),
+			20% calc(100% - 2.6px),
+			10% calc(100% - 3px),
+			1px calc(100% - 4px),
+			1.3px 75%,
+			2px 50%,
+			4px 25%
+		);
+	}
 }
 
 @media (prefers-color-scheme: dark) {
