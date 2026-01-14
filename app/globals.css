@@ -81,4 +81,62 @@ body {
 	background: var(--background);
 	color: var(--foreground);
 	font-family: "VT323", Arial, Helvetica, sans-serif;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+
+@keyframes crtFlicker {
+	0%, 100% { opacity: 0.97; }
+    10% { opacity: 0.94; }
+    20% { opacity: 0.94; }
+    30% { opacity: 0.96; }
+    50% { opacity: 0.95; }
+    70% { opacity: 0.95; }
+}
+
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.2)
+  );
+  background-size: 100% 4px; 
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; 
+  z-index: 10;
+  
+  animation: scanlineFlicker 0.15s infinite;
+  opacity: 0.6; 
+}
+
+@keyframes scanlineFlicker {
+  0% { opacity: 0.6; }
+  5% { opacity: 0.55; }
+  10% { opacity: 0.5; }
+  15% { opacity: 0.6; }
+  20% { opacity: 0.65; }
+  25% { opacity: 0.55; }
+  30% { opacity: 0.6; }
+  35% { opacity: 0.5; }
+  40% { opacity: 0.65; }
+  45% { opacity: 0.55; }
+  50% { opacity: 0.6; }
+  55% { opacity: 0.5; }
+  60% { opacity: 0.65; }
+  65% { opacity: 0.55; }
+  70% { opacity: 0.6; }
+  75% { opacity: 0.55; }
+  80% { opacity: 0.5; }
+  85% { opacity: 0.65; }
+  90% { opacity: 0.55; }
+  95% { opacity: 0.65; }
+  100% { opacity: 0.6; }
 }
