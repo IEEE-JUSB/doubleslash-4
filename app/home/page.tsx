@@ -10,7 +10,7 @@ export default function HomePage() {
 		<div className="text-white">
 			{/* the entire div container is this one, use conditional formatting for On and Off states */}
 			{togglePower ? 
-				<div className="pl-3"> {/* When screen is ON */}
+				<div className="pl-13 pt-4 md:pl-8 md:pt-5"> {/* When screen is ON */}
 					Screen is on
 				</div>
 				:

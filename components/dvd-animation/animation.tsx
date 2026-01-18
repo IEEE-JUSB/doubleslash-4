@@ -27,12 +27,12 @@ export default function LogoAnimation() {
             pos.current.x += vel.current.x;
             pos.current.y += vel.current.y;
 
-            if (pos.current.x + logo_width >= 392 || pos.current.x <= 0) {
+            if (pos.current.x + logo_width >= 382 || pos.current.x <= 10) {
                 vel.current.x *= -1;
                 changeColor();
             }
 
-            if (pos.current.y + logo_height >= 270 || pos.current.y <= 0) {
+            if (pos.current.y + logo_height >= 265 || pos.current.y <= 10) {
                 vel.current.y *= -1;
                 changeColor();
             }

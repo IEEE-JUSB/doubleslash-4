@@ -1,142 +1,254 @@
 @import "tailwindcss";
 
 :root {
-	/* --background: #fcf5d9;
+    /* --background: #fcf5d9;
 	--foreground: #2b2b2b; */
-	--light-yellow: #fcf5d9;
-	--ochre: #feae02;
-	--orange: #f17648;
-	--brown: #891e08;
-	--dark-gray: #2b2b2b;
+    --light-yellow: #fcf5d9;
+    --ochre: #feae02;
+    --orange: #f17648;
+    --brown: #891e08;
+    --dark-gray: #2b2b2b;
 }
 
 @theme inline {
-	/* --color-background: var(--background);
+    /* --color-background: var(--background);
 	--color-foreground: var(--foreground); */
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
-	--font-vt323: var(--font-vt323);
-	--flicker-gradient:
-		linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
-		linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+    --font-vt323: var(--font-vt323);
+    --flicker-gradient:
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
 
-	--breakpoint-smx: 580px;
+    --breakpoint-smx: 580px;
 
-	--animate-pointer-cycle: pointer-cycle 1.5s ease-in-out infinite alternate;
+    --animate-pointer-cycle: pointer-cycle 1.5s ease-in-out infinite alternate;
 
-	@keyframes pointer-cycle {
-		from {
-			transform: rotate(0deg) scale(1);
-		}
-		to {
-			transform: rotate(2deg) scale(1.02);
-		}
-	}
+    @keyframes pointer-cycle {
+        from {
+            transform: rotate(0deg) scale(1);
+        }
+
+        to {
+            transform: rotate(2deg) scale(1.02);
+        }
+    }
 }
 
 @layer utilities {
-	.clip-monitor {
-		clip-path: polygon(
-			8px 5px,
-			10% 4px,
-			20% 3px,
-			30% 2px,
-			40% 1.5px,
-			50% 1px,
-			60% 1.2px,
-			65% 1.4px,
-			70% 1.7px,
-			80% 2.4px,
-			90% 3.6px,
-			calc(100% - 6px) 5px,
-			calc(100% - 3px) 25%,
-			calc(100% - 1.5px) 50%,
-			100% 75%,
-			100% calc(100% - 4px),
-			90% calc(100% - 3.2px),
-			80% calc(100% - 2.4px),
-			70% calc(100% - 1.7px),
-			60% calc(100% - 1.4px),
-			50% calc(100% - 1px),
-			40% calc(100% - 1.5px),
-			30% calc(100% - 2px),
-			20% calc(100% - 2.6px),
-			10% calc(100% - 3px),
-			1px calc(100% - 4px),
-			1.3px 75%,
-			2px 50%,
-			4px 25%
-		);
-	}
+    .clip-monitor {
+        clip-path: polygon(
+                    44px 14px,
+                    10% 14px,
+                    20% 13px,
+                    30% 12px,
+                    40% 11.5px,
+                    50% 11px,
+                    60% 11.2px,
+                    65% 11.4px,
+                    70% 11.7px,
+                    calc(100% - 38px) 14px,
+                    calc(100% - 36px) 25%,
+                    calc(100% - 35px) 50%,
+                    calc(100% - 34px) 60%,
+                    calc(100% - 35px) 96%,
+                    80% calc(100% - 8px),
+                    70% calc(100% - 7px),
+                    60% calc(100% - 7px),
+                    50% calc(100% - 7px),
+                    40% calc(100% - 7px),
+                    30% calc(100% - 7px),
+                    20% calc(100% - 7px),
+                    10% calc(100% - 9px),
+                    40px calc(100% - 10px),
+                    40px 75%,
+                    40px 50%,
+                    42px 20%
+            );
+    }
+
+    @media (min-width: 768px) {
+        .clip-monitor {
+            clip-path: polygon(22px 14px,
+                    10% 14px,
+                    20% 13px,
+                    30% 12px,
+                    40% 11.5px,
+                    50% 11px,
+                    60% 11.2px,
+                    65% 11.4px,
+                    70% 11.7px,
+                    80% 12.4px,
+                    90% 13.6px,
+                    calc(100% - 15px) 15px,
+                    calc(100% - 14px) 25%,
+                    calc(100% - 12px) 50%,
+                    calc(100% - 12px) 60%,
+                    calc(100% - 10px) 96%,
+                    90% calc(100% - 10px),
+                    80% calc(100% - 8px),
+                    70% calc(100% - 7px),
+                    60% calc(100% - 7px),
+                    50% calc(100% - 7px),
+                    40% calc(100% - 7px),
+                    30% calc(100% - 7px),
+                    20% calc(100% - 7px),
+                    10% calc(100% - 9px),
+                    15px calc(100% - 10px),
+                    15px 75%,
+                    17px 50%,
+                    20px 25%);
+        }
+    }
 }
 
+
 @media (prefers-color-scheme: dark) {
-	:root {
-		--background: #2b2b2b;
-		--foreground: #fcf5d9;
-	}
+    :root {
+        --background: #2b2b2b;
+        --foreground: #fcf5d9;
+    }
 }
 
 body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: "VT323", Arial, Helvetica, sans-serif;
-	overflow-x: hidden;
-	overflow-y: hidden;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: "VT323", Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 
 @keyframes crtFlicker {
-	0%, 100% { opacity: 0.97; }
-    10% { opacity: 0.94; }
-    20% { opacity: 0.94; }
-    30% { opacity: 0.96; }
-    50% { opacity: 0.95; }
-    70% { opacity: 0.95; }
+
+    0%,
+    100% {
+        opacity: 0.97;
+    }
+
+    10% {
+        opacity: 0.94;
+    }
+
+    20% {
+        opacity: 0.94;
+    }
+
+    30% {
+        opacity: 0.96;
+    }
+
+    50% {
+        opacity: 0.95;
+    }
+
+    70% {
+        opacity: 0.95;
+    }
 }
 
 .scanlines {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0) 50%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.2)
-  );
-  background-size: 100% 4px; 
-  
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none; 
-  z-index: 10;
-  
-  animation: scanlineFlicker 0.15s infinite;
-  opacity: 0.6; 
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0) 50%,
+            rgba(0, 0, 0, 0.2) 50%,
+            rgba(0, 0, 0, 0.2));
+    background-size: 100% 4px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 10;
+
+    animation: scanlineFlicker 0.15s infinite;
+    opacity: 0.6;
 }
 
 @keyframes scanlineFlicker {
-  0% { opacity: 0.6; }
-  5% { opacity: 0.55; }
-  10% { opacity: 0.5; }
-  15% { opacity: 0.6; }
-  20% { opacity: 0.65; }
-  25% { opacity: 0.55; }
-  30% { opacity: 0.6; }
-  35% { opacity: 0.5; }
-  40% { opacity: 0.65; }
-  45% { opacity: 0.55; }
-  50% { opacity: 0.6; }
-  55% { opacity: 0.5; }
-  60% { opacity: 0.65; }
-  65% { opacity: 0.55; }
-  70% { opacity: 0.6; }
-  75% { opacity: 0.55; }
-  80% { opacity: 0.5; }
-  85% { opacity: 0.65; }
-  90% { opacity: 0.55; }
-  95% { opacity: 0.65; }
-  100% { opacity: 0.6; }
+    0% {
+        opacity: 0.6;
+    }
+
+    5% {
+        opacity: 0.55;
+    }
+
+    10% {
+        opacity: 0.5;
+    }
+
+    15% {
+        opacity: 0.6;
+    }
+
+    20% {
+        opacity: 0.65;
+    }
+
+    25% {
+        opacity: 0.55;
+    }
+
+    30% {
+        opacity: 0.6;
+    }
+
+    35% {
+        opacity: 0.5;
+    }
+
+    40% {
+        opacity: 0.65;
+    }
+
+    45% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    55% {
+        opacity: 0.5;
+    }
+
+    60% {
+        opacity: 0.65;
+    }
+
+    65% {
+        opacity: 0.55;
+    }
+
+    70% {
+        opacity: 0.6;
+    }
+
+    75% {
+        opacity: 0.55;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    85% {
+        opacity: 0.65;
+    }
+
+    90% {
+        opacity: 0.55;
+    }
+
+    95% {
+        opacity: 0.65;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
 }
