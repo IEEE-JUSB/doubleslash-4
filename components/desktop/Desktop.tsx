@@ -49,11 +49,11 @@ export default function WindowsDesktop() {
 							<Image
 								className="block"
 								src="/logos/register.png"
-								alt="thanks"
+								alt="tracks"
 								width={36}
 								height={36}
 							/>
-							<p className="">Thanks</p>
+							<p className="">Tracks</p>
 						</a>
 					</li>
 					<li className="grid place-items-center">
