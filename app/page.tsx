@@ -1,15 +1,28 @@
-import Image from "next/image";
-import DevfolioButton from "$/components/devfolio";
+"use client";
+import { useState } from "react";
 
-export default function Home() {
+import { usePower } from "$/contexts/powerContext";
+import LogoAnimation from "$/components/dvd-animation/animation";
+import DosTerminal from "$/components/dos-screen-animation/page";
+import Desktop from "$/components/desktop/Desktop";
+
+export default function HomePage() {
+	const { togglePower } = usePower();
+
+	const [homeOnScreen, setHomeOnScreen] = useState(false);
+	const showHome = () => setHomeOnScreen(true);
+
 	return (
-		<div className="flex min-h-screen items-center justify-center bg-zinc-50 text-4xl dark:bg-black">
-			Welcome to DoubleSlash 4.0
-			<div>
-				<h3>GOLD SPONSORS</h3>
-				<Image src="/imgs/Devfolio_Logo-Colored.svg" height={100} width={100} alt="DEVFOLIO LOGO" />
-				<DevfolioButton />
-			</div>
-		</div>
+		<>
+			{togglePower ? (
+				<div className="w-full h-full pl-13 pr-5 pt-4 md:pl-8 md:pt-5 text-white">
+					{homeOnScreen ? <Desktop /> : <DosTerminal onComplete={showHome} />}
+				</div>
+			) : (
+				<div>
+					<LogoAnimation />
+				</div>
+			)}
+		</>
 	);
 }
