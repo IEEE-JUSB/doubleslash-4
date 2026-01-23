@@ -137,9 +137,9 @@ export default function WindowsDesktop() {
 				</ul>
 				<dialog
 					ref={dialogRef}
-					className="backdrop:bg-gray-800/20 bg-light-yellow outline-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-translate-y-2/3 w-4/5 sm:w-1/4 h-4/5 sm:h-2/5 z-300 overflow-clip"
+					className="backdrop:bg-gray-800/20 bg-light-yellow outline-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-translate-y-2/3 w-4/5 sm:w-1/4 h-4/5 sm:h-2/5 z-300 pointer-events-none"
 				>
-					<div className="flex flex-col text-xl scanlines pointer-events-none">
+					<div className="flex flex-col text-xl h-full scanlines">
 						<nav className="flex justify-between pl-4 bg-ochre">
 							<h3 className="text-2xl">{modalContent}</h3>
 							<button
@@ -149,7 +149,7 @@ export default function WindowsDesktop() {
 								X
 							</button>
 						</nav>
-						<div className="sm:p-2">{MODAL_COMPONENTS[modalContent]}</div>
+						<div className="sm:p-2 overflow-y-auto pointer-events-auto">{MODAL_COMPONENTS[modalContent]}</div>
 					</div>
 				</dialog>
 			</div>
