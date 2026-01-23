@@ -8,6 +8,7 @@ import Timeline from "./tabs/Timeline";
 import FAQ from "./tabs/FAQ";
 import Contact from "./tabs/Contact";
 import Register from "./tabs/Register";
+import Submit from "./tabs/Submit";
 
 const MODAL_COMPONENTS = {
 	"": <></>,
@@ -18,6 +19,7 @@ const MODAL_COMPONENTS = {
 	"Timeline": <Timeline />,
 	"FAQ": <FAQ />,
 	"Contact": <Contact />,
+	"Submit": <Submit />
 } as const;
 
 export default function WindowsDesktop() {
@@ -28,10 +30,11 @@ export default function WindowsDesktop() {
 		setModalContent(content);
 		dialogRef.current?.showModal();
 	};
+
 	return (
 		<section className="w-full h-full flex flex-col bg-[url(/imgs/DoubleSlashDithered.png)] bg-contain bg-center bg-no-repeat bg-[#0001] pointer-events-auto">
 			<ul className="flex p-4 gap-4">
-				<li className="grid place-items-center">
+				<li className="grid place-items-start">
 					<button
 						onClick={() => handleShowModal("Register")}
 						className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
@@ -46,7 +49,7 @@ export default function WindowsDesktop() {
 						<p className="">Register</p>
 					</button>
 				</li>
-				<li className="grid place-items-center">
+				<li className="grid place-items-start">
 					<button
 						onClick={() => handleShowModal("Documents")}
 						className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
@@ -61,7 +64,7 @@ export default function WindowsDesktop() {
 						<p className="">Documents</p>
 					</button>
 				</li>
-				<li className="ml-auto grid place-items-center">
+				<li className="ml-auto flex flex-col gap-4 items-center">
 					<button
 						onClick={() => handleShowModal("Sponsors")}
 						className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
@@ -74,6 +77,19 @@ export default function WindowsDesktop() {
 							height={36}
 						/>
 						<p className="">Sponsors</p>
+					</button>
+					<button
+						onClick={() => handleShowModal("Submit")}
+						className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
+					>
+						<Image
+							className="block"
+							src="/logos/folder.png"
+							alt="submit"
+							width={36}
+							height={36}
+						/>
+						<p className="">Submit</p>
 					</button>
 				</li>
 			</ul>
