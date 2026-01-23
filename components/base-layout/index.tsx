@@ -28,12 +28,12 @@ export function LayoutContent({ children }: { children: React.ReactNode }) {
 
 			<button
 				type="button"
-				className={`absolute left-[calc(50%-180px)] md:left-[calc(50%-210px)] bottom-[calc(50%-170px)] z-10 w-12 h-12 border border-red-500 after:absolute after:-top-1 after:-right-1 after:w-12 after:h-12 after:border after:border-red-400 transition-opacity duration-700 ${togglePower && "opacity-35"}`}
+				className={`absolute left-[calc(50%-180px)] md:left-[calc(50%-210px)] bottom-[calc(50%-170px)] z-10 w-12 h-12 border border-red-500 after:absolute after:-top-1 after:-right-1 after:w-12 after:h-12 after:border after:border-red-400 transition-opacity duration-700 cursor-pointer ${togglePower && "opacity-35"}`}
 				onClick={turnOn}
 			></button>
-			<div className="absolute bottom-[calc(50%+36px)] right-[calc(50%+6px)] translate-x-1/2 translate-y-1/2 clip-monitor h-[268px] w-[392px] bg-[#121010fa] animate-[crtFlicker_0.15s_infinite]">
+			<div className="absolute bottom-[calc(50%+36px)] right-[calc(50%+6px)] translate-x-1/2 translate-y-1/2 clip-monitor h-[268px] w-[392px] bg-[#121010fa] animate-[crtFlicker_0.15s_infinite] z-10">
 				<div
-					className={`relative w-full h-full clip-monitor overflow-hidden after:absolute after:top-0 after:left-0 after:bg-[#121010fa] after:opacity-0 after:z-2 before:absolute before:top-0 before:left-0 before:z-2 before:bg-size-[100%_2px,3px_100%] before:bg-(--flicker-gradient) scanlines z-10`}
+					className={`relative w-full h-full clip-monitor overflow-hidden after:absolute after:top-0 after:left-0 after:bg-[#121010fa] after:opacity-0 after:z-20 before:absolute before:top-0 before:left-0 before:z-20 before:bg-size-[100%_2px,3px_100%] before:bg-(--flicker-gradient) scanlines pointer-events-none`}
 				>
 					{children}
 				</div>
