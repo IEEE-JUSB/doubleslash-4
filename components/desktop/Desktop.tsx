@@ -27,15 +27,23 @@ export default function WindowsDesktop() {
 	const [modalContent, setModalContent] = useState<keyof typeof MODAL_COMPONENTS>("");
 
 	const handleShowModal = (content: keyof typeof MODAL_COMPONENTS) => {
-		if (content !== "Submit") {
-			setModalContent(content);
 			dialogRef.current?.showModal();
-		} else {
+		if (content === "Submit") {
 			window.open(
 				"https://glittery-mallow-ca5.notion.site/DoubleSlash-4-0-1d042d6d80c2809ea10ff6055de02e9f",
 				"_blank",
 				"noopener,noreferrer"
 			);
+		}
+		if (content === "Register") {
+			window.open(
+				"https://doubleslash4.devfolio.co/",
+				"_blank",
+				"noopener,noreferrer"
+			);
+		} else {
+			setModalContent(content);
+			dialogRef.current?.showModal();
 		}
 	};
 
@@ -161,7 +169,7 @@ export default function WindowsDesktop() {
 				</ul>
 				<dialog
 					ref={dialogRef}
-					className="backdrop:bg-gray-800/20 bg-light-yellow outline-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-translate-y-2/3 w-4/5 sm:w-1/4 h-4/5 sm:h-2/5 z-300 pointer-events-none"
+					className="backdrop:bg-gray-800/80 bg-light-yellow outline-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-translate-y-2/3 w-4/5 sm:w-1/4 h-4/5 sm:h-2/5 z-300 pointer-events-none"
 				>
 					<div className="flex flex-col text-xl h-full scanlines">
 						<nav className="flex justify-between pl-4 bg-ochre">

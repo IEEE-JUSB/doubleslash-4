@@ -2,7 +2,7 @@ import React from 'react'
 
 function Tracks() {
   return (
-    <div>Tracks</div>
+    <div>Coming Soon!</div>
   )
 }
 
