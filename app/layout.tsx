@@ -28,6 +28,9 @@ export const metadata: Metadata = {
 		"Official website for DoubleSlash 4.0, an offline hackathon organised by IEEE Jadavpur University Student Branch.",
 	applicationName: "DoubleSlash 4.0",
 	keywords: [
+		"doubleslash 4.0",
+		"double slash 4.0",
+		"double slash4.0",
 		"doubleslash",
 		"hackathon",
 		"jadavpur",
@@ -38,9 +41,9 @@ export const metadata: Metadata = {
 		"software",
 	],
 	openGraph: {
-		title: "DoubleSlash 4.0",
+		title: "DoubleSlash 4.0 | 36-Hour Offline Hackathon at Jadavpur University",
 		description:
-			"Official website for DoubleSlash 4.0, an offline hackathon organised by IEEE Jadavpur University Student Branch.",
+			"DoubleSlash 4.0 is a 36-hour offline hackathon organised by IEEE Jadavpur University Student Branch in Kolkata.Build, compete, and win exciting prizes.",
 		url: "https://doubleslash4.ieee-jaduniv.in",
 		siteName: "DoubleSlash 4.0",
 		type: "website",
