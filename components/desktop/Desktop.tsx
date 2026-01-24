@@ -27,8 +27,16 @@ export default function WindowsDesktop() {
 	const [modalContent, setModalContent] = useState<keyof typeof MODAL_COMPONENTS>("");
 
 	const handleShowModal = (content: keyof typeof MODAL_COMPONENTS) => {
-		setModalContent(content);
-		dialogRef.current?.showModal();
+		if (content !== "Submit") {
+			setModalContent(content);
+			dialogRef.current?.showModal();
+		} else {
+			window.open(
+				"https://glittery-mallow-ca5.notion.site/DoubleSlash-4-0-1d042d6d80c2809ea10ff6055de02e9f",
+				"_blank",
+				"noopener,noreferrer"
+			);
+		}
 	};
 
 	return (
