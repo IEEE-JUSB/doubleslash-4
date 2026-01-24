@@ -18,7 +18,7 @@ export function LayoutContent({ children }: { children: React.ReactNode }) {
 		<div
 			className={`bg-[url(/imgs/background-narrow.jpeg)] md:bg-[url(/imgs/background-wide.jpeg)] bg-center bg-no-repeat bg-size-[700px_1214px] md:bg-size-[1439px_809px] h-full relative overflow-hidden transition-transform duration-700 lg:scale-107 after:block after:absolute after:h-[710px] after:w-[1224px] md:after:h-[819px] md:after:w-[1449px] after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:inset-0 after:[background:radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)] after:blur-2xl after:overflow-hidden ${togglePower && "scale-120 lg:scale-160 xl:scale-160"}`}
 		>
-			<div className="absolute left-[calc(50%-150px)] bottom-[calc(100%-180px)]" >
+			<div className="absolute left-[calc(50%-160px)] bottom-[calc(100%-180px)] z-500" >
 				{/* <p className="text-white">
 					HELLO //USE THIS TO CHECK IF THE POSITION IS RIGHT IN DEV
 				</p> */}
