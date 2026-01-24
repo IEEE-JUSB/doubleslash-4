@@ -28,7 +28,7 @@ export function LayoutContent({ children }: { children: React.ReactNode }) {
 
 			<button
 				type="button"
-				className={`absolute left-[calc(50%-165px)] md:left-[calc(50%-190px)] bottom-[calc(50%-139px)] border z-10 h-3 w-5 ${togglePower ? "border-green-500/80 bg-green-500/60" : "bg-red-500/20 border-red-500/40"} transition-opacity duration-700 cursor-pointer ${togglePower && "opacity-35"}`}
+				className={`absolute left-[calc(50%-165px)] md:left-[calc(50%-190px)] bottom-[calc(50%-139px)] border z-10 h-3 w-5 ${togglePower ? "border-green-500/80 bg-green-500/60" : "bg-red-500/60 border-red-500/40 animate-[pulse_1s_cubic-bezier(0.4,0,0.6,1)_infinite]"} transition-opacity duration-700 cursor-pointer ${togglePower && "opacity-35"}`}
 				onClick={turnOn}
 			></button>
 			<div className="absolute bottom-[calc(50%+36px)] right-[calc(50%+6px)] translate-x-1/2 translate-y-1/2 clip-monitor h-[268px] w-[392px] bg-[#121010fa] animate-[crtFlicker_0.15s_infinite] z-10">
