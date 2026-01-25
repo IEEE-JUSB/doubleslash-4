@@ -55,7 +55,7 @@ function Tracks() {
         <p className="text-right leading-none">Build innovative IoT systems that strengthen connectivity and enhance experiences. </p>
       </div>
 			<div className="flex justify-between items-center gap-8">
-        <p className="text-left leading-none">Address emerging threats through resilient systems that safeguard information and user rights.</p>
+        <p className="text-left leading-none">Explore your imagination and bring ideas to life beyond the set boundaries.</p>
         <div className="flex flex-col items-center gap-1">
           <Image src={"/logos/DoubleSlash_Crest_Inverted.png"} alt="DoubleSlash Logo" width={48} height={48} />
           <h3 className="text-center leading-none">Slash (Open)</h3>
