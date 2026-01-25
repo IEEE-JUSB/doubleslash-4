@@ -1,10 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { usePower } from "$/contexts/powerContext";
 import LogoAnimation from "$/components/dvd-animation/animation";
 import DosTerminal from "$/components/dos-screen-animation/page";
 import Desktop from "$/components/desktop/Desktop";
+import RetroLoader from "$/components/LoaderAnimation";
 
 export default function HomePage() {
 	const { togglePower } = usePower();

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, VT323 } from "next/font/google";
 
 import { PowerProvider } from "$/contexts/powerContext";
 import { LayoutContent } from "$/components/base-layout";
+import LoaderWrapper from "$/components/Loader";
 
 import "./globals.css";
 
@@ -58,11 +59,13 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${vt323.variable} antialiased bg-[url(/imgs/background-wide.jpeg)] h-screen backdrop-blur-3xl`}
+				className={`${geistSans.variable} ${geistMono.variable} ${vt323.variable} antialiased bg-[url(/imgs/background-wide.jpeg)] h-screen`}
 			>
+				
 				<PowerProvider>
-					<LayoutContent>{children}</LayoutContent>
+					<LoaderWrapper><LayoutContent>{children}</LayoutContent></LoaderWrapper>
 				</PowerProvider>
+				
 			</body>
 		</html>
 	);
