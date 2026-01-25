@@ -9,6 +9,7 @@ import FAQ from "./tabs/FAQ";
 import Contact from "./tabs/Contact";
 import Register from "./tabs/Register";
 import Submit from "./tabs/Submit";
+import Link from "next/link";
 
 const MODAL_COMPONENTS = {
 	"": <></>,
@@ -19,7 +20,7 @@ const MODAL_COMPONENTS = {
 	"Timeline": <Timeline />,
 	"FAQ": <FAQ />,
 	"Contact": <Contact />,
-	"Submit": <Submit />
+	"Submit": <Submit />,
 } as const;
 
 export default function WindowsDesktop() {
@@ -27,20 +28,16 @@ export default function WindowsDesktop() {
 	const [modalContent, setModalContent] = useState<keyof typeof MODAL_COMPONENTS>("");
 
 	const handleShowModal = (content: keyof typeof MODAL_COMPONENTS) => {
-			dialogRef.current?.showModal();
+		dialogRef.current?.showModal();
 		if (content === "Submit") {
 			window.open(
 				"https://glittery-mallow-ca5.notion.site/DoubleSlash-4-0-1d042d6d80c2809ea10ff6055de02e9f",
 				"_blank",
-				"noopener,noreferrer"
+				"noopener,noreferrer",
 			);
 		}
 		if (content === "Register") {
-			window.open(
-				"https://doubleslash4.devfolio.co/",
-				"_blank",
-				"noopener,noreferrer"
-			);
+			window.open("https://doubleslash4.devfolio.co/", "_blank", "noopener,noreferrer");
 		} else {
 			setModalContent(content);
 			dialogRef.current?.showModal();
@@ -51,8 +48,9 @@ export default function WindowsDesktop() {
 		<section className="w-full h-full flex flex-col bg-[url(/imgs/DoubleSlashDithered.png)] bg-contain bg-center bg-no-repeat bg-[#0001] pointer-events-auto">
 			<ul className="flex p-4 gap-4">
 				<li className="grid place-items-start">
-					<button
-						onClick={() => handleShowModal("Register")}
+					<Link
+						href={"https://doubleslash4.devfolio.co/"}
+						target="_blank"
 						className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
 					>
 						<Image
@@ -63,7 +61,7 @@ export default function WindowsDesktop() {
 							height={36}
 						/>
 						<p className="">Register</p>
-					</button>
+					</Link>
 				</li>
 				<li className="grid place-items-start">
 					<button
@@ -94,19 +92,22 @@ export default function WindowsDesktop() {
 						/>
 						<p className="">Sponsors</p>
 					</button>
-					<button
-						onClick={() => handleShowModal("Submit")}
+					<Link
+						href={
+							"https://glittery-mallow-ca5.notion.site/DoubleSlash-4-0-1d042d6d80c2809ea10ff6055de02e9f"
+						}
+						target="_blank"
 						className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
 					>
 						<Image
-							className="block"
+							className="block filter-[hue-rotate(130deg)]"
 							src="/logos/folder.png"
 							alt="submit"
 							width={36}
 							height={36}
 						/>
 						<p className="">Submit</p>
-					</button>
+					</Link>
 				</li>
 			</ul>
 
@@ -172,16 +173,26 @@ export default function WindowsDesktop() {
 					className="backdrop:bg-gray-800/80 bg-light-yellow outline-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-translate-y-2/3 w-4/5 sm:w-1/4 h-4/5 sm:h-2/5 z-300 pointer-events-none"
 				>
 					<div className="flex flex-col text-xl h-full scanlines">
-						<nav className="flex justify-between pl-4 bg-ochre">
-							<h3 className="text-2xl">{modalContent}</h3>
-							<button
-								onClick={() => dialogRef.current?.close()}
-								className="outline-none bg-brown px-2 text-light-yellow pointer-events-auto cursor-pointer"
-							>
-								X
-							</button>
+						<nav className="flex flex-col w-full">
+							<div className="flex justify-between pl-4 bg-ochre">
+								<h3 className="text-2xl">{modalContent}</h3>
+								<button
+									onClick={() => dialogRef.current?.close()}
+									className="outline-none bg-brown px-2 text-light-yellow pointer-events-auto cursor-pointer"
+								>
+									X
+								</button>
+							</div>
+							<div className="grid grid-cols-4 bg-orange pointer-events-auto">
+								<button onClick={()=>setModalContent("Documents")} className="cursor-pointer border-r-2 border-r-gray-600 px-3">Documents</button>
+								<button onClick={()=>setModalContent("Tracks")} className="cursor-pointer border-r-2 border-r-gray-600 px-3">Tracks</button>
+								<button onClick={()=>setModalContent("Timeline")} className="cursor-pointer px-3 border-r-2 border-r-gray-600">Timeline</button>
+								<button onClick={()=>setModalContent("Contact")} className="cursor-pointer px-3">Contact</button>
+							</div>
 						</nav>
-						<div className="sm:p-2 overflow-y-auto pointer-events-auto">{MODAL_COMPONENTS[modalContent]}</div>
+						<div className="sm:p-2 overflow-y-auto pointer-events-auto h-full">
+							{MODAL_COMPONENTS[modalContent]}
+						</div>
 					</div>
 				</dialog>
 			</div>

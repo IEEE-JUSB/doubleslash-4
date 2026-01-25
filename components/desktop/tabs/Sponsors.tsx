@@ -2,7 +2,7 @@ import React from 'react'
 
 function Sponsors() {
   return (
-    <div>Coming Soon!</div>
+    <div className='p-2'>Coming Soon!</div>
   )
 }
 

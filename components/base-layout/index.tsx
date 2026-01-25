@@ -24,11 +24,15 @@ export function LayoutContent({ children }: { children: React.ReactNode }) {
 				</p> */}
 				<DevfolioButton />
 			</div>
-			<img
+			<div className={`absolute font-sans text-sm left-[calc(50%-180px)] sm:left-[calc(50%-210px)] bottom-[calc(50%-125px)] w-40 text-light-yellow origin-[50%_50%] opacity-0 transition-opacity duration-700 ${!togglePower && "opacity-100"}`}
+			>
+				Click here!
+			</div>
+			{/* <img
 				src="/imgs/point-to-power-arrow.png"
 				alt="Power button pointer"
 				className={`absolute left-[calc(50%-240px)] bottom-[calc(50%-300px)] w-40 animate-pointer-cycle origin-[50%_50%] opacity-0 transition-opacity duration-700 ${!togglePower && "opacity-100"}`}
-			/>
+			/> */}
 			<button
 				type="button"
 				className={`absolute left-[calc(50%-165px)] md:left-[calc(50%-190px)] bottom-[calc(50%-139px)] border z-10 h-3 w-5 ${togglePower ? "border-green-500/80 bg-green-500/60" : "bg-red-600 border-red-500/40 animate-[pulse_1s_cubic-bezier(0.4,0,0.6,1)_infinite]"} transition-opacity duration-700 cursor-pointer ${togglePower && "opacity-35"}`}
