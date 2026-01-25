@@ -68,9 +68,15 @@ function Contact() {
         </table>
       </div>
       <div className='flex gap-2'>
-        <p>Send us an Email - </p>
+        <p>Email us at </p>
         <a href="mailto:doubleslash.ieeejusb@gmail.com" className="text-blue-700 underline">
           doubleslash.ieeejusb@gmail.com
+        </a>
+      </div>
+      <div className='flex gap-2'>
+        <p>Join Discord </p>
+        <a href="https://discord.com/invite/d6pU9zWZTE" target='_blank' className="text-blue-700 underline">
+          Click Here to Join
         </a>
       </div>
       <div className='flex flex-col items-center gap-2'>
