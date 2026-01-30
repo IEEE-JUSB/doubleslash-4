@@ -59,8 +59,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${vt323.variable} antialiased bg-[url(/imgs/background-wide.jpeg)] h-screen`}
+				className={`${geistSans.variable} ${geistMono.variable} ${vt323.variable} antialiased bg-cover bg-[url(/imgs/background-wide.jpeg)] h-screen`}
 			>
+				<div className="backdrop-blur-3xl w-full h-full absolute top-0 left-0 -z-10"></div>
 				
 				<PowerProvider>
 					<LoaderWrapper><LayoutContent>{children}</LayoutContent></LoaderWrapper>
