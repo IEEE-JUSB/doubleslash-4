@@ -16,11 +16,11 @@ export default function HomePage() {
 	return (
 		<>
 			{togglePower ? (
-				<div className="w-full h-full pl-13 pr-5 pt-4 md:pl-8 md:pt-5 text-white z-20">
+				<div className="backdrop-blur-3xl w-full h-full pl-13 pr-5 pt-4 md:pl-8 md:pt-5 text-white z-20">
 					{homeOnScreen ? <Desktop /> : <DosTerminal onComplete={showHome} />}
 				</div>
 			) : (
-				<div>
+				<div className="backdrop-blur-3xl ">
 					<LogoAnimation />
 				</div>
 			)}
