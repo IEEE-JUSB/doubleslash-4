@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, VT323 } from "next/font/google";
-
+import { Analytics } from '@vercel/analytics/next';
 import { PowerProvider } from "$/contexts/powerContext";
 import { LayoutContent } from "$/components/base-layout";
 import LoaderWrapper from "$/components/Loader";
@@ -64,7 +64,7 @@ export default function RootLayout({
 				<div className="backdrop-blur-3xl w-full h-full absolute top-0 left-0 -z-10"></div>
 				
 				<PowerProvider>
-					<LoaderWrapper><LayoutContent>{children}</LayoutContent></LoaderWrapper>
+					<LoaderWrapper><LayoutContent>{children}<Analytics /></LayoutContent></LoaderWrapper>
 				</PowerProvider>
 				
 			</body>
