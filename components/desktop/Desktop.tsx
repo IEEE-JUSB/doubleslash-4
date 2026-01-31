@@ -9,6 +9,7 @@ import FAQ from "./tabs/FAQ";
 import Contact from "./tabs/Contact";
 import Register from "./tabs/Register";
 import Submit from "./tabs/Submit";
+import Whatsapp from "./tabs/Whatsapp";
 import Link from "next/link";
 
 const MODAL_COMPONENTS = {
@@ -21,6 +22,7 @@ const MODAL_COMPONENTS = {
 	"FAQ": <FAQ />,
 	"Contact": <Contact />,
 	"Submit": <Submit />,
+	"Whatsapp": <Whatsapp />
 } as const;
 
 export default function WindowsDesktop() {
@@ -30,14 +32,11 @@ export default function WindowsDesktop() {
 	const handleShowModal = (content: keyof typeof MODAL_COMPONENTS) => {
 		dialogRef.current?.showModal();
 		if (content === "Submit") {
-			window.open(
-				"https://glittery-mallow-ca5.notion.site/DoubleSlash-4-0-1d042d6d80c2809ea10ff6055de02e9f",
-				"_blank",
-				"noopener,noreferrer",
-			);
-		}
-		if (content === "Register") {
+			window.open("https://glittery-mallow-ca5.notion.site/DoubleSlash-4-0-1d042d6d80c2809ea10ff6055de02e9f", "_blank", "noopener,noreferrer");
+		} else if (content === "Register") {
 			window.open("https://doubleslash4.devfolio.co/", "_blank", "noopener,noreferrer");
+		} else if (content === "Whatsapp") {
+			window.open("https://chat.whatsapp.com/FL2csyu6FjE5Wzf8m20qdo", "_blank", "noopener,noreferrer");
 		} else {
 			setModalContent(content);
 			dialogRef.current?.showModal();
@@ -76,6 +75,21 @@ export default function WindowsDesktop() {
 							height={36}
 						/>
 						<p className="">Documents</p>
+					</button>
+				</li>
+				<li className="grid place-items-start">
+					<button
+						onClick={() => handleShowModal("Whatsapp")}
+						className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
+					>
+						<Image
+							className="block"
+							src="/logos/whatsapp.png"
+							alt="documents"
+							width={34}
+							height={34}
+						/>
+						<p className="">Whatsapp</p>
 					</button>
 				</li>
 				<li className="ml-auto flex flex-col gap-4 items-center">
@@ -184,10 +198,10 @@ export default function WindowsDesktop() {
 								</button>
 							</div>
 							<div className="grid grid-cols-4 bg-orange pointer-events-auto">
-								<button onClick={()=>setModalContent("Documents")} className="cursor-pointer border-r-2 border-r-gray-600 px-3">Documents</button>
-								<button onClick={()=>setModalContent("Tracks")} className="cursor-pointer border-r-2 border-r-gray-600 px-3">Tracks</button>
-								<button onClick={()=>setModalContent("Timeline")} className="cursor-pointer px-3 border-r-2 border-r-gray-600">Timeline</button>
-								<button onClick={()=>setModalContent("Contact")} className="cursor-pointer px-3">Contact</button>
+								<button onClick={() => setModalContent("Documents")} className="cursor-pointer border-r-2 border-r-gray-600 px-3">Documents</button>
+								<button onClick={() => setModalContent("Tracks")} className="cursor-pointer border-r-2 border-r-gray-600 px-3">Tracks</button>
+								<button onClick={() => setModalContent("Timeline")} className="cursor-pointer px-3 border-r-2 border-r-gray-600">Timeline</button>
+								<button onClick={() => setModalContent("Contact")} className="cursor-pointer px-3">Contact</button>
 							</div>
 						</nav>
 						<div className="sm:p-2 overflow-y-auto pointer-events-auto h-full">
