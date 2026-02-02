@@ -74,7 +74,7 @@ export default function WindowsDesktop() {
 
 	return (
 		<section className="w-full h-full flex flex-col bg-[url(/imgs/DoubleSlashDithered.png)] bg-contain bg-center bg-no-repeat bg-[#0001] pointer-events-auto">
-			<ul className="flex pt-10 p-2 px-0 md:p-4 gap-2 md:gap-4">
+			<ul className="flex pt-5 p-2 px-0 md:p-4 gap-2 md:gap-4">
 				<li className="grid place-items-start">
 					<Link
 						href={"https://doubleslash4.devfolio.co/"}
