@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Documents from "./tabs/Documents";
 import Sponsors from "./tabs/Sponsors";
 import Tracks from "./tabs/Tracks";
@@ -11,6 +11,7 @@ import Register from "./tabs/Register";
 import Submit from "./tabs/Submit";
 import Whatsapp from "./tabs/Whatsapp";
 import Link from "next/link";
+import Community_Partner from "./tabs/Community_Partner";
 
 const MODAL_COMPONENTS = {
 	"": <></>,
@@ -22,12 +23,40 @@ const MODAL_COMPONENTS = {
 	"FAQ": <FAQ />,
 	"Contact": <Contact />,
 	"Submit": <Submit />,
-	"Whatsapp": <Whatsapp />
+	"Whatsapp": <Whatsapp />,
+	"Community Partner": <Community_Partner />
 } as const;
 
 export default function WindowsDesktop() {
 	const dialogRef = useRef<HTMLDialogElement>(null);
 	const [modalContent, setModalContent] = useState<keyof typeof MODAL_COMPONENTS>("");
+	const [countdown, setCountdown] = useState('00:00:00');
+
+	useEffect(() => {
+		const deadline = new Date('2026-02-14T23:59:59').getTime(); // set yiour deadline here
+
+		const interval = setInterval(() => {
+			const now = new Date().getTime();
+			const distance = deadline - now;
+
+			if (distance < 0) {
+				setCountdown('00:00:00');
+				clearInterval(interval);
+				return;
+			}
+
+			const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			setCountdown(
+				`${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+			);
+		}, 1000);
+
+		return () => clearInterval(interval);
+	}, []);
 
 	const handleShowModal = (content: keyof typeof MODAL_COMPONENTS) => {
 		dialogRef.current?.showModal();
@@ -45,7 +74,7 @@ export default function WindowsDesktop() {
 
 	return (
 		<section className="w-full h-full flex flex-col bg-[url(/imgs/DoubleSlashDithered.png)] bg-contain bg-center bg-no-repeat bg-[#0001] pointer-events-auto">
-			<ul className="flex p-4 gap-4">
+			<ul className="flex pt-10 p-2 px-0 md:p-4 gap-2 md:gap-4">
 				<li className="grid place-items-start">
 					<Link
 						href={"https://doubleslash4.devfolio.co/"}
@@ -61,38 +90,54 @@ export default function WindowsDesktop() {
 						/>
 						<p className="">Register</p>
 					</Link>
-				</li>
-				<li className="grid place-items-start">
-					<button
-						onClick={() => handleShowModal("Documents")}
-						className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
-					>
-						<Image
-							className="block"
-							src="/logos/folder.png"
-							alt="documents"
-							width={36}
-							height={36}
-						/>
-						<p className="">Documents</p>
-					</button>
-				</li>
-				<li className="grid place-items-start">
-					<button
-						onClick={() => handleShowModal("Whatsapp")}
+					<Link
+						href={"https://chat.whatsapp.com/FL2csyu6FjE5Wzf8m20qdo"}
+						target="_blank"
 						className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
 					>
 						<Image
 							className="block"
 							src="/logos/whatsapp.png"
-							alt="documents"
+							alt="Click to join the Whatsapp group"
 							width={34}
 							height={34}
 						/>
 						<p className="">Whatsapp</p>
+					</Link>
+				</li>
+				<li className="grid place-items-start">
+					<div className="flex flex-col items-center cursor-not-allowed z-20">
+						<Image
+							className="block mb-1 invert-100"
+							src="/logos/clock.png"
+							alt="Idea submission deadline"
+							width={40}
+							height={40}
+						/>
+						<p className="text-[10px] text-center px-1 rounded tracking-wider leading-tight">
+							<p className="mb-0">Deadline:</p>
+							<p className="text-[13px] ">
+								{countdown}
+							</p>
+						</p>
+					</div>
+				</li>
+				<li className="grid place-items-start">
+					<button
+						onClick={() => handleShowModal("Community Partner")}
+						className="flex flex-col items-center max-w-10 cursor-pointer z-20 transition hover:scale-105"
+					>
+						<Image
+							className="block"
+							src="/logos/folder.png"
+							alt="community_partner"
+							width={36}
+							height={36}
+						/>
+						<p className="leading-3 pt-1 px-0 text-[15px]">Community Partner</p>
 					</button>
 				</li>
-				<li className="ml-auto flex flex-col gap-4 items-center">
+				<li className="ml-10 flex flex-col gap-4 items-center">
 					<button
 						onClick={() => handleShowModal("Sponsors")}
 						className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
@@ -126,7 +171,22 @@ export default function WindowsDesktop() {
 			</ul>
 
 			<div className="w-full mt-auto grid place-items-center">
-				<ul className="flex w-fit gap-4 p-4 pb-5 items-center justify-center relative after:w-full after:h-[calc(67.7%-18px)] after:absolute after:top-1/3 after:left-0 after:rounded-md after:bg-white after:opacity-10">
+				<ul className="flex w-fit gap-4 p-4 pb-5 items-center justify-center relative after:w-full after:h-[calc(67.7%-18px)] after:absolute after:top-1/3 after:left-0 after:rounded-md after:bg-white after:opacity-10 ">
+					<li className="grid place-items-center">
+						<button
+							onClick={() => handleShowModal("Documents")}
+							className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
+						>
+							<Image
+								className="block"
+								src="/logos/folder.png"
+								alt="tracks"
+								width={24}
+								height={24}
+							/>
+							<p className="text-[13px]">Documents</p>
+						</button>
+					</li>
 					<li className="grid place-items-center">
 						<button
 							onClick={() => handleShowModal("Tracks")}
@@ -136,10 +196,10 @@ export default function WindowsDesktop() {
 								className="block"
 								src="/logos/register.png"
 								alt="tracks"
-								width={36}
-								height={36}
+								width={24}
+								height={24}
 							/>
-							<p className="">Tracks</p>
+							<p className="text-[14px]">Tracks</p>
 						</button>
 					</li>
 					<li className="grid place-items-center">
@@ -151,10 +211,10 @@ export default function WindowsDesktop() {
 								className="block"
 								src="/logos/register.png"
 								alt="timeline"
-								width={36}
-								height={36}
+								width={24}
+								height={24}
 							/>
-							<p className="">Timeline</p>
+							<p className="text-[14px]">Timeline</p>
 						</button>
 					</li>
 					<li className="grid place-items-center">
@@ -162,8 +222,14 @@ export default function WindowsDesktop() {
 							onClick={() => handleShowModal("FAQ")}
 							className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
 						>
-							<Image className="block" src="/logos/register.png" alt="faq" width={36} height={36} />
-							<p className="">FAQ</p>
+							<Image
+								className="block"
+								src="/logos/register.png"
+								alt="faq"
+								width={24}
+								height={24}
+							/>
+							<p className="text-[14px]">FAQ</p>
 						</button>
 					</li>
 					<li className="grid place-items-center">
@@ -175,10 +241,10 @@ export default function WindowsDesktop() {
 								className="block"
 								src="/logos/register.png"
 								alt="contact"
-								width={36}
-								height={36}
+								width={24}
+								height={24}
 							/>
-							<p className="">Contact</p>
+							<p className="text-[14px]">Contact</p>
 						</button>
 					</li>
 				</ul>
