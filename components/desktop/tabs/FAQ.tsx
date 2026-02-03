@@ -11,7 +11,7 @@ export default function FAQAccordion() {
     },
     {
       question: "Do I need to be a coding genius to join?",
-      answer: "Nope! If you've got a spark of creativity, that's all you need. Whether you're a coding legend or a novice, there's a place for you to shine at DoubleSlash 3.0!"
+      answer: "Nope! If you've got a spark of creativity, that's all you need. Whether you're a coding legend or a novice, there's a place for you to shine at DoubleSlash 4.0!"
     },
     {
       question: "Can I join solo or do I need a team?",
