@@ -82,11 +82,11 @@ export default function WindowsDesktop() {
 						className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
 					>
 						<Image
-							className="block"
-							src="/logos/register.png"
+							className="block pt-1"
+							src="/logos/devfolio.png"
 							alt="register for the hackathon"
-							width={36}
-							height={36}
+							width={28}
+							height={28}
 						/>
 						<p className="">Register</p>
 					</Link>
@@ -108,18 +108,18 @@ export default function WindowsDesktop() {
 				<li className="grid place-items-start">
 					<div className="flex flex-col items-center cursor-not-allowed z-20">
 						<Image
-							className="block mb-1 invert-100"
+							className="block invert-100"
 							src="/logos/clock.png"
 							alt="Idea submission deadline"
-							width={40}
-							height={40}
+							width={37}
+							height={37}
 						/>
-						<p className="text-[10px] text-center px-1 rounded tracking-wider leading-tight">
+						<div className="text-[10px] text-center px-1 rounded tracking-wider leading-tight">
 							<p className="mb-0">Deadline:</p>
 							<p className="text-[13px] ">
 								{countdown}
 							</p>
-						</p>
+						</div>
 					</div>
 				</li>
 				<li className="grid place-items-start">
@@ -129,7 +129,7 @@ export default function WindowsDesktop() {
 					>
 						<Image
 							className="block"
-							src="/logos/folder.png"
+							src="/icons/folder-new.png"
 							alt="community_partner"
 							width={36}
 							height={36}
@@ -144,7 +144,7 @@ export default function WindowsDesktop() {
 					>
 						<Image
 							className="block"
-							src="/logos/folder.png"
+							src="/icons/folder-new.png"
 							alt="sponsors"
 							width={36}
 							height={36}
@@ -160,7 +160,7 @@ export default function WindowsDesktop() {
 					>
 						<Image
 							className="block filter-[hue-rotate(130deg)]"
-							src="/logos/folder.png"
+							src="/icons/folder-new.png"
 							alt="submit"
 							width={36}
 							height={36}
@@ -179,10 +179,10 @@ export default function WindowsDesktop() {
 						>
 							<Image
 								className="block"
-								src="/logos/folder.png"
+								src="/icons/folder-new.png"
 								alt="tracks"
-								width={24}
-								height={24}
+								width={26}
+								height={26}
 							/>
 							<p className="text-[13px]">Documents</p>
 						</button>
@@ -194,12 +194,12 @@ export default function WindowsDesktop() {
 						>
 							<Image
 								className="block"
-								src="/logos/register.png"
+								src="/icons/notepad.png"
 								alt="tracks"
 								width={24}
 								height={24}
 							/>
-							<p className="text-[14px]">Tracks</p>
+							<p className="text-[13px]">Tracks</p>
 						</button>
 					</li>
 					<li className="grid place-items-center">
@@ -209,12 +209,12 @@ export default function WindowsDesktop() {
 						>
 							<Image
 								className="block"
-								src="/logos/register.png"
+								src="/icons/calender.png"
 								alt="timeline"
 								width={24}
 								height={24}
 							/>
-							<p className="text-[14px]">Timeline</p>
+							<p className="text-[13px]">Timeline</p>
 						</button>
 					</li>
 					<li className="grid place-items-center">
@@ -229,7 +229,7 @@ export default function WindowsDesktop() {
 								width={24}
 								height={24}
 							/>
-							<p className="text-[14px]">FAQ</p>
+							<p className="text-[13px]">FAQ</p>
 						</button>
 					</li>
 					<li className="grid place-items-center">
@@ -239,12 +239,12 @@ export default function WindowsDesktop() {
 						>
 							<Image
 								className="block"
-								src="/logos/register.png"
+								src="/icons/telephone.png"
 								alt="contact"
-								width={24}
-								height={24}
+								width={22}
+								height={22}
 							/>
-							<p className="text-[14px]">Contact</p>
+							<p className="text-[13px]">Contact</p>
 						</button>
 					</li>
 				</ul>
