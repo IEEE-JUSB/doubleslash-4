@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, VT323 } from "next/font/google";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from "@vercel/analytics/next";
 import { PowerProvider } from "$/contexts/powerContext";
 import { LayoutContent } from "$/components/base-layout";
 import LoaderWrapper from "$/components/Loader";
@@ -49,6 +49,9 @@ export const metadata: Metadata = {
 		siteName: "DoubleSlash 4.0",
 		type: "website",
 	},
+	alternates: {
+		canonical: "https://doubleslash4.ieee-jaduniv.in",
+	},
 };
 
 export default function RootLayout({
@@ -62,11 +65,15 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} ${vt323.variable} antialiased bg-cover bg-[url(/imgs/background-wide.jpeg)] h-screen`}
 			>
 				<div className="backdrop-blur-3xl w-full h-full absolute top-0 left-0 -z-10"></div>
-				
+
 				<PowerProvider>
-					<LoaderWrapper><LayoutContent>{children}<Analytics /></LayoutContent></LoaderWrapper>
+					<LoaderWrapper>
+						<LayoutContent>
+							{children}
+							<Analytics />
+						</LayoutContent>
+					</LoaderWrapper>
 				</PowerProvider>
-				
 			</body>
 		</html>
 	);
