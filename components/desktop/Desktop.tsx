@@ -171,7 +171,7 @@ export default function WindowsDesktop() {
 			</ul>
 
 			<div className="w-full mt-auto grid place-items-center">
-				<ul className="flex w-fit gap-4 p-4 pb-5 items-center justify-center relative after:w-full after:h-[calc(67.7%-18px)] after:absolute after:top-1/3 after:left-0 after:rounded-md after:bg-white after:opacity-10 ">
+				<ul className="flex w-fit gap-4 p-4 pb-5 items-center justify-center relative after:w-full after:h-[calc(67.7%-18px)] after:absolute after:top-1/3 after:left-0 after:rounded-md after:bg-white after:opacity-10 mr-6 md:mr-0">
 					<li className="grid place-items-center">
 						<button
 							onClick={() => handleShowModal("Documents")}
@@ -224,12 +224,12 @@ export default function WindowsDesktop() {
 						>
 							<Image
 								className="block"
-								src="/logos/register.png"
+								src="/imgs/root-sit.png"
 								alt="faq"
-								width={24}
-								height={24}
+								width={19}
+								height={19}
 							/>
-							<p className="text-[13px]">FAQ</p>
+							<p className="leading-4 text-[13px]">FAQ</p>
 						</button>
 					</li>
 					<li className="grid place-items-center">
@@ -241,8 +241,8 @@ export default function WindowsDesktop() {
 								className="block"
 								src="/icons/telephone.png"
 								alt="contact"
-								width={22}
-								height={22}
+								width={20}
+								height={20}
 							/>
 							<p className="text-[13px]">Contact</p>
 						</button>
