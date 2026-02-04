@@ -250,7 +250,7 @@ export default function WindowsDesktop() {
 				</ul>
 				<dialog
 					ref={dialogRef}
-					className="backdrop:bg-gray-800/80 bg-light-yellow outline-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-translate-y-2/3 w-4/5 sm:w-1/4 h-4/5 sm:h-2/5 z-300 pointer-events-none"
+					className="backdrop:bg-gray-800/80 bg-light-yellow outline-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-translate-y-2/3 w-4/5 sm:w-1/3 h-4/5 sm:h-3/5 z-300 pointer-events-none"
 				>
 					<div className="flex flex-col text-xl h-full scanlines">
 						<nav className="flex flex-col w-full">
