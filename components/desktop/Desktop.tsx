@@ -12,6 +12,7 @@ import Submit from "./tabs/Submit";
 import Whatsapp from "./tabs/Whatsapp";
 import Link from "next/link";
 import Community_Partner from "./tabs/Community_Partner";
+import Figma_Workshop from "./tabs/Figma_Workshop";
 
 const MODAL_COMPONENTS = {
 	"": <></>,
@@ -24,7 +25,8 @@ const MODAL_COMPONENTS = {
 	"Contact": <Contact />,
 	"Submit": <Submit />,
 	"Whatsapp": <Whatsapp />,
-	"Community Partner": <Community_Partner />
+	"Community Partner": <Community_Partner />,
+	"Figma Workshop": <Figma_Workshop />
 } as const;
 
 export default function WindowsDesktop() {
@@ -122,7 +124,7 @@ export default function WindowsDesktop() {
 						</div>
 					</div>
 				</li>
-				<li className="grid place-items-start">
+				<li className="grid place-items-center">
 					<button
 						onClick={() => handleShowModal("Community Partner")}
 						className="flex flex-col items-center max-w-10 cursor-pointer z-20 transition hover:scale-105"
@@ -136,8 +138,21 @@ export default function WindowsDesktop() {
 						/>
 						<p className="leading-3 pt-1 px-0 text-[15px]">Community Partner</p>
 					</button>
+					<button
+						onClick={() => handleShowModal("Figma Workshop")}
+						className="flex flex-col w-fit justify-center items-center max-w-10 cursor-pointer z-20 transition hover:scale-105"
+					>
+						<Image
+							className="block"
+							src="/icons/folder-new.png"
+							alt="figma_workshop"
+							width={36}
+							height={36}
+						/>
+						<p className="leading-3 pt-1 px-0 text-[15px]">Figma Workshop</p>
+					</button>
 				</li>
-				<li className="ml-10 flex flex-col gap-4 items-center">
+				<li className="grid place-items-center ml-auto mr-8 md:mr-0">
 					<button
 						onClick={() => handleShowModal("Sponsors")}
 						className="flex flex-col items-center cursor-pointer z-20 transition hover:scale-105"
@@ -250,7 +265,7 @@ export default function WindowsDesktop() {
 				</ul>
 				<dialog
 					ref={dialogRef}
-					className="backdrop:bg-gray-800/80 bg-light-yellow outline-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-translate-y-2/3 w-4/5 sm:w-1/3 h-4/5 sm:h-3/5 z-300 pointer-events-none"
+					className="backdrop:bg-gray-800/80 bg-light-yellow outline-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:-translate-y-2/3 w-4/5 lg:w-1/3 h-4/5 lg:h-3/5 z-300 pointer-events-none"
 				>
 					<div className="flex flex-col text-xl h-full scanlines">
 						<nav className="flex flex-col w-full">
