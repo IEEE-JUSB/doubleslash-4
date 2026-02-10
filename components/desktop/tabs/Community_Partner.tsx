@@ -11,6 +11,13 @@ export default function Community_Partner() {
                 className="cursor-pointer transition hover:scale-102"
             />
             <Image
+                src="/tabs/community_partner/gdg_uemk.png"
+                height={350}
+                width={350}
+                alt="GDG_UEMK"
+                className="cursor-pointer transition hover:scale-102"
+            />
+            <Image
                 src="/tabs/community_partner/react-kolkata copy.png"
                 height={250}
                 width={250}

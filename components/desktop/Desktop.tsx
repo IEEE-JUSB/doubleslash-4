@@ -26,7 +26,7 @@ const MODAL_COMPONENTS = {
 	"Submit": <Submit />,
 	"Whatsapp": <Whatsapp />,
 	"Community Partner": <Community_Partner />,
-	"Figma Workshop": <Figma_Workshop />
+	"Workshop": <Figma_Workshop />
 } as const;
 
 export default function WindowsDesktop() {
@@ -139,12 +139,12 @@ export default function WindowsDesktop() {
 						<p className="leading-3 pt-1 px-0 text-[15px]">Community Partner</p>
 					</button>
 					<button
-						onClick={() => handleShowModal("Figma Workshop")}
+						onClick={() => handleShowModal("Workshop")}
 						className="flex flex-col w-fit justify-center items-center max-w-10 cursor-pointer z-20 transition hover:scale-105"
 					>
 						<Image
 							className="block"
-							src="/icons/folder-new.png"
+							src="/icons/figma-logo-final.png"
 							alt="figma_workshop"
 							width={36}
 							height={36}
