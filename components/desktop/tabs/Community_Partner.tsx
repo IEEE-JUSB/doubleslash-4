@@ -32,9 +32,9 @@ export default function Community_Partner() {
                 className="cursor-pointer transition hover:scale-102"
             />
             <Image
-                src="/tabs/community_partner/lnc_community.jpeg"
-                height={400}
-                width={400}
+                src="/tabs/community_partner/lnc_community.png"
+                height={300}
+                width={300}
                 alt="LNC_Community"
                 className="cursor-pointer transition hover:scale-102"
             />
