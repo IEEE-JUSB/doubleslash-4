@@ -38,6 +38,13 @@ export default function Community_Partner() {
                 alt="LNC_Community"
                 className="cursor-pointer transition hover:scale-102"
             />
+            <Image
+                src="/tabs/community_partner/the_dev_army.png"
+                height={200}
+                width={200}
+                alt="The-Dev-Army"
+                className="cursor-pointer transition hover:scale-102"
+            />
         </div>
     )
 }
