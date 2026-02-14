@@ -35,7 +35,7 @@ export default function WindowsDesktop() {
 	const [countdown, setCountdown] = useState('00:00:00');
 
 	useEffect(() => {
-		const deadline = new Date('2026-02-14T23:59:59').getTime(); // set yiour deadline here
+		const deadline = new Date('2026-02-20T23:59:59').getTime(); // set yiour deadline here
 
 		const interval = setInterval(() => {
 			const now = new Date().getTime();
