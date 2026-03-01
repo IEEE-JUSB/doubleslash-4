@@ -45,6 +45,27 @@ export default function Community_Partner() {
                 alt="The-Dev-Army"
                 className="cursor-pointer transition hover:scale-102"
             />
+            <Image
+                src="/tabs/community_partner/webwiz-white.png"
+                height={200}
+                width={200}
+                alt="WebWiz"
+                className="cursor-pointer transition hover:scale-102"
+            />
+            <Image
+                src="/tabs/community_partner/gdg_aot_white.jpeg"
+                height={200}
+                width={200}
+                alt="GDG AOT"
+                className="cursor-pointer transition hover:scale-102"
+            />
+            <Image
+                src="/tabs/community_partner/gdg_kgec_black.jpeg"
+                height={200}
+                width={400}
+                alt="GDG KGEC"
+                className="cursor-pointer transition hover:scale-102"
+            />
         </div>
     )
 }
